@@ -1,4 +1,4 @@
-# Wallpaper-DB
+# Wallpaper-db
 [![@ppizarror](http://latex.ppizarror.com/Template-Informe/resources/autor2.svg)](http://ppizarror.com)
 [![Licencia MiT](http://latex.ppizarror.com/Template-Informe/resources/Licencia-MIT-blue.svg)](https://opensource.org/licenses/MIT/)<br>
 
