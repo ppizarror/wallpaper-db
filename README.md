@@ -6,7 +6,7 @@ Repositorio de wallpapers usados por distintas páginas de <a href="http://ppiza
 
 ## Modo uso
 
-#### Obtener una imagen de forma aleatoria
+### Obtener una imagen de forma aleatoria
 
 1. Importar libreria js:
     
@@ -23,7 +23,7 @@ wallpaper_db.color    // Color predominante de la imagen
 wallpaper_db.index    // Índice de la imagen escogida en la db
 ```
 
-#### Funciones extras
+### Funciones extras
 
 **wallpaper_db_random_blur(idelem, blurprobability, blurlimits)**: Genera el efecto blur a un div *idelem* con una probabilidad de *blurprobability* (entre 0, 100) con valor límite entre *blurlimits*.
 ```javascript
