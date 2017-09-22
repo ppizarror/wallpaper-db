@@ -15,10 +15,10 @@ Repositorio de wallpapers usados por distintas páginas de <a href="http://ppiza
 2. Usar la imagen seleccionada de forma aleatoria utilizando la variable *wallpaper_db*:
 
 ```javascript
-wallpaperdb.image    // Url imagen seleccionada
-wallpaperdb.position // Posición de la imagen
-wallpaperdb.color    // Color predominante de la imagen
-wallpaperdb.index    // Índice de la imagen escogida en la db
+wallpaper_db.image    // Url imagen seleccionada
+wallpaper_db.position // Posición de la imagen
+wallpaper_db.color    // Color predominante de la imagen
+wallpaper_db.index    // Índice de la imagen escogida en la db
 ```
 
 ## Licencia
