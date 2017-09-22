@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
     $('#background-page-header-colored').css('background-color', wallpaper_db.color);
     $('#background-page-header-colored').fadeIn(200);
     console.log('Estableciendo el fondo de pantalla ' + wallpaper_db.index);
-    var back_img = new Image();
+    back_img = new Image();
     back_img.onload = function() {
         $('#background-page-header').css({
             'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
@@ -39,10 +39,10 @@ jQuery(document).ready(function($) {
         $('#background-page-header').css('-o-background-size', 'cover');
         $('#background-page-header').css('background-size', 'cover');
         $('#background-page-header').css('width', $(window).width());
-        random_blur('#background-page-header', 50);
+        wallpaper_db_random_blur('#background-page-header', 50, [3, 10]);
         setTimeout(function() {
             $('#background-page-header-colored').fadeOut('slow');
-        }, timeoutFadeInWallpaperAferLoad);
+        }, 500);
     }
     back_img.src = wallpaper_db.image;
 

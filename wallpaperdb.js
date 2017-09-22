@@ -142,14 +142,13 @@ var wallpaper_db = {
 }
 
 // Genera blur en una imagen
-function wallpaper_db_random_blur(idelem, blurprobability) {
+function wallpaper_db_random_blur(idelem, blurprobability, blurlimits) {
     if (Math.random() >= blurprobability / 100) {
         for (var i = 0; i < 100; i++) {
             blur = parseInt(Math.random() * 100);
             if (blur >= blurlimits[0] && blur <= blurlimits[1]) {
-                $(idelem).css('filter', String.format('blur({0}px)', blur));
+                $(idelem).css('filter', 'blur(' + blur + 'px)');
                 $(idelem).css('transform', 'scale(1.05)');
-                console.log(String.format('Se define blur en {0}px', blur));
                 return;
             }
         }
