@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="http://ppizarror.com/wallpaper-db/" title="Wallpaper-db">
-    <img alt="ppizarror" src="http://ppizarror.com/icon.png" width="200px" height="200px" />
+    <img alt="Wallpaper-db" src="http://ppizarror.com/icon.png" width="200px" height="200px" />
   </a>
   <br /><br />
   Wallpaper-db</h1>
