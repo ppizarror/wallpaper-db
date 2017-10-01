@@ -143,7 +143,7 @@ var wallpaper_db = {
 
 // Genera blur en una imagen
 function wallpaper_db_random_blur(idelem, blurprobability, blurlimits) {
-    if (Math.random() >= blurprobability / 100) {
+    if (Math.random() <= blurprobability / 100) {
         for (var i = 0; i < 100; i++) {
             blur = parseInt(Math.random() * 100);
             if (blur >= blurlimits[0] && blur <= blurlimits[1]) {
