@@ -25,19 +25,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 _wallpaperdb_images = [
     ['09305524.jpg', 'center', '#343434'], // 0
     ['67535412.jpg', 'bottom', '#C96265'], // 1
-    ['93314696.jpg', 'center', '#6A6061'], // 2
-    ['background.jpg', 'center', '#5E4E2A'], // 3
-    ['12939392.jpg', 'center', '#614654'], // 4
-    ['19392139.jpg', 'center', '#4E3E25'], // 5
-    ['46140562.jpg', 'center', '#EF3D4D'], // 6
+    ['95686782.jpg', 'bottom', '#2f1143'], // 2
+    ['93314696.jpg', 'center', '#000000'], // 3
+    ['12939392.jpg', 'center', '#9C6E70'], // 4
+    ['19392139.jpg', 'center', '#2F251E'], // 5
+    ['46140562.jpg', 'center', '#263039'], // 6
     ['37320735.jpg', 'bottom', '#333132'], // 7
     ['71453949.jpg', 'top', '#4F4F51'], // 8
     ['39581671.jpg', 'bottom', '#262C3C'], // 9
-    ['99206040.jpg', 'bottom', '#5284A9'], // 10
-    ['92910382.jpg', 'bottom', '#444444'], // 11
-    ['04274037.jpg', 'top', '#602A13'], // 12
-    ['72131838.jpg', 'center', '#896956'], // 13
-    ['80718230.jpg', 'bottom', '#4C44AB'], // 14
+    ['99206040.jpg', 'bottom', '#346488'], // 10
+    ['92910382.jpg', 'bottom', '#2D2D2D'], // 11
+    ['04274037.jpg', 'top', '#000000'], // 12
+    ['72131838.jpg', 'center', '#000000'], // 13
+    ['80718230.jpg', 'bottom', '#444774'], // 14
     ['08038477.jpg', 'center', '#000000'], // 15
     ['22532189.jpg', 'bottom', '#000000'], // 16
     ['07086832.jpg', 'top', '#4F6068'], // 17
@@ -46,9 +46,9 @@ _wallpaperdb_images = [
     ['15032996.jpg', 'bottom', '#304651'], // 20
     ['37994916.jpg', 'center', '#30307A'], // 21
     ['63330443.jpg', 'top', '#000000'], // 22
-    ['46199258.jpg', 'bottom', '#2b323f'], // 23
-    ['39593777.jpg', 'bottom', '#014BBA'], // 24
-    ['47702546.jpg', 'bottom', '#702269'], // 25
+    ['46199258.jpg', 'bottom', '#2F303A'], // 23
+    ['39593777.jpg', 'bottom', '#075BCD'], // 24
+    ['47702546.jpg', 'bottom', '#2F073B'], // 25
     ['51280378.jpg', 'center', '#174C82'], // 26
     ['80794446.jpg', 'center', '#6D5630'], // 27
     ['36752157.jpg', 'center', '#FE3060'], // 28
@@ -87,7 +87,7 @@ _wallpaperdb_images = [
     ['93568387.jpg', 'bottom', '#354a5a'], // 61
     ['97469752.jpg', 'center', '#ba4234'], // 62
     ['02530621.jpg', 'center', '#313131'], // 63
-    ['02534697.jpg', 'top', '#314200'], // 64
+    ['02534697.jpg', 'top', '#08072c'], // 64
     ['02642756.jpg', 'center', '#5b1943'], // 65
     ['03625208.jpg', 'center', '#484f55'], // 66
     ['05378902.jpg', 'bottom', '#141b27'], // 67
@@ -129,9 +129,14 @@ _wallpaperdb_images = [
     ['59272533.jpg', 'center', '#0f2645'], // 103
     ['82884717.jpg', 'bottom', '#1c0031'], // 104
     ['88649909.jpg', 'center', '#513954'], // 105
-    ['95686782.jpg', 'bottom', '#2f1143'] // 106
+    ['10234950.jpg', 'center', '#555238'], // 106
+    ['20113328.jpg', 'center', '#4c549c'], // 107
+    ['37809603.jpg', 'center', '#555555'], // 108
+    ['81749653.jpg', 'bottom', '#618591'], // 109
+    ['98072701.jpg', 'center', '#705e50'] // 110
 ];
 _wallpaperdb_index = Math.floor(Math.random() * (_wallpaperdb_images.length + 1));
+// _wallpaperdb_index = 30 // TEST
 
 // Se obtiene un elemento al azar
 var wallpaper_db = {
