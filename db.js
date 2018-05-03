@@ -1,27 +1,31 @@
-/*
-The MIT License (MIT)
+/**
+ The MIT License (MIT)
 
-Copyright 2017 Pablo Pizarro R.
+ Copyright 2017-2018 Pablo Pizarro R.
 
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the "Software"),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the Software
-is furnished to do so, subject to the following conditions:
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the Software
+ is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
-// Lista de wallpapers
+/**
+ * Lista de wallpapers
+ * @type {*[]}
+ * @private
+ */
 _wallpaperdb_images = [
     ['09305524.jpg', 'center', '#343434'], // 0
     ['67535412.jpg', 'bottom', '#C96265'], // 1
@@ -138,23 +142,36 @@ _wallpaperdb_images = [
 _wallpaperdb_index = Math.floor(Math.random() * (_wallpaperdb_images.length + 1));
 // _wallpaperdb_index = 30 // TEST
 
-// Se obtiene un elemento al azar
+// noinspection ES6ConvertVarToLetConst
+/**
+ * Se obtiene un elemento al azar
+ * @type {{image: string, position: *, color: *, index: number | *}}
+ */
 var wallpaper_db = {
     "image": 'http://ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[_wallpaperdb_index][0],
     "position": _wallpaperdb_images[_wallpaperdb_index][1],
     "color": _wallpaperdb_images[_wallpaperdb_index][2],
     "index": _wallpaperdb_index
-}
+};
 
-// Genera blur en una imagen
+/**
+ * Genera blur en una imagen
+ * @function
+ * @param {string} idelem - Identificador del objeto a hacer blur
+ * @param {number} blurprobability - Límites probabilidad de blur
+ * @param {array} blurlimits - Límites probabilidad de blur
+ */
 function wallpaper_db_random_blur(idelem, blurprobability, blurlimits) {
     if (Math.random() <= blurprobability / 100) {
-        for (var i = 0; i < 100; i++) {
-            blur = parseInt(Math.random() * 100);
+        for (let i = 0; i < 100; i++) {
+            // noinspection JSCheckFunctionSignatures
+            let blur = parseInt(Math.random() * 100);
             if (blur >= blurlimits[0] && blur <= blurlimits[1]) {
-                $(idelem).css('filter', 'blur(' + blur + 'px)');
-                $(idelem).css('transform', 'scale(1.05)');
-                return;
+                if (idelem[0] === '#') {
+                    idelem = idelem.substring(1)
+                }
+                document.getElementById(idelem).style.filter = 'blur(' + blur + 'px)';
+                document.getElementById(idelem).style.transform = 'scale(1.05)';
             }
         }
     }
