@@ -148,7 +148,7 @@ _wallpaperdb_index = Math.floor(Math.random() * (_wallpaperdb_images.length + 1)
  * @type {{image: string, position: *, color: *, index: number | *}}
  */
 var wallpaper_db = {
-    "image": 'http://ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[_wallpaperdb_index][0],
+    "image": 'https://ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[_wallpaperdb_index][0],
     "position": _wallpaperdb_images[_wallpaperdb_index][1],
     "color": _wallpaperdb_images[_wallpaperdb_index][2],
     "index": _wallpaperdb_index
