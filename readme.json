@@ -2,19 +2,19 @@
     "PROJECT": {
         "NAME": "Wallpaper-db",
         "ICON": {
-            "IMAGE": "https://ppizarror.com/icon.png",
+            "IMAGE": "https://res.ppizarror.com/icon.png",
             "ALT": "Wallpaper-db",
             "WIDTH": 200,
             "HEIGHT": 200
         },
-        "URL": "https://ppizarror.com/wallpaper-db/",
+        "URL": "https://github.ppizarror.com/wallpaper-db/",
         "URL_TITLE": "Wallpaper-db"
     },
     "AUTHOR": {
         "NAME": "Pablo Pizarro R.",
         "URL": "https://ppizarror.com",
         "ALT": "ppizarror",
-        "DATE": "2017",
+        "DATE": "2017-2019",
         "SECTION": {
             "TITLE": "Autor",
             "SHOW": true
@@ -23,12 +23,12 @@
     "DESCRIPTION": "Repositorio de wallpapers usados por distintas páginas de <a href='https://ppizarror.com'>ppizarror.com</a>",
     "BADGES": {
         "0": {
-            "IMAGE": "https://ppizarror.com/badges/autor.svg",
+            "IMAGE": "https://res.ppizarror.com/badges/autor.svg",
             "HREF": "https://ppizarror.com",
             "ALT": "@ppizarror"
         },
         "1": {
-            "IMAGE": "https://ppizarror.com/badges/licenciamit.svg",
+            "IMAGE": "https://res.ppizarror.com/badges/licenciamit.svg",
             "HREF": "https://opensource.org/licenses/MIT/",
             "ALT": "Licencia MIT"
         }
