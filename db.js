@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2018 Pablo Pizarro R.
+ Copyright 2017-2021 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -27,17 +27,17 @@
  * @private
  */
 _wallpaperdb_images = [
-    ['09305524.jpg', 'center', '#343434'], // 0
-    ['67535412.jpg', 'bottom', '#C96265'], // 1
+    ['09305524.jpg', 'center', '#333333'], // 0
+    ['67535412.jpg', 'bottom', '#bc6766'], // 1
     ['95686782.jpg', 'bottom', '#2f1143'], // 2
     ['93314696.jpg', 'center', '#000000'], // 3
     ['12939392.jpg', 'center', '#9C6E70'], // 4
     ['19392139.jpg', 'center', '#2F251E'], // 5
-    ['46140562.jpg', 'center', '#263039'], // 6
+    ['46140562.jpg', 'center', '#283038'], // 6
     ['37320735.jpg', 'bottom', '#333132'], // 7
-    ['71453949.jpg', 'top', '#4F4F51'], // 8
+    ['71453949.jpg', 'top', '#4d4d4f'], // 8
     ['39581671.jpg', 'bottom', '#262C3C'], // 9
-    ['99206040.jpg', 'bottom', '#346488'], // 10
+    ['99206040.jpg', 'bottom', '#55718f'], // 10
     ['92910382.jpg', 'bottom', '#2D2D2D'], // 11
     ['04274037.jpg', 'top', '#000000'], // 12
     ['72131838.jpg', 'center', '#000000'], // 13
@@ -46,25 +46,25 @@ _wallpaperdb_images = [
     ['22532189.jpg', 'bottom', '#000000'], // 16
     ['07086832.jpg', 'top', '#4F6068'], // 17
     ['11917378.jpg', 'bottom', '#393939'], // 18
-    ['11944943.jpg', 'bottom', '#0A344F'], // 19
-    ['15032996.jpg', 'bottom', '#304651'], // 20
+    ['11944943.jpg', 'bottom', '#314c66'], // 19
+    ['15032996.jpg', 'bottom', '#4a565b'], // 20
     ['37994916.jpg', 'center', '#30307A'], // 21
     ['63330443.jpg', 'top', '#000000'], // 22
     ['46199258.jpg', 'bottom', '#2F303A'], // 23
-    ['39593777.jpg', 'bottom', '#075BCD'], // 24
+    ['39593777.jpg', 'bottom', '#1d3679'], // 24
     ['47702546.jpg', 'bottom', '#2F073B'], // 25
-    ['51280378.jpg', 'center', '#174C82'], // 26
-    ['80794446.jpg', 'center', '#6D5630'], // 27
-    ['36752157.jpg', 'center', '#FE3060'], // 28
+    ['51280378.jpg', 'center', '#65687e'], // 26
+    ['80794446.jpg', 'center', '#1c1b16'], // 27
+    ['36752157.jpg', 'center', '#631253'], // 28
     ['42450256.jpg', 'bottom', '#50405B'], // 29
-    ['89228305.jpg', 'bottom', '#C51A20'], // 30
+    ['89228305.jpg', 'bottom', '#40352f'], // 30
     ['95243003.jpg', 'bottom', '#173966'], // 31
-    ['16978868.jpg', 'center', '#7E5A40'], // 32
+    ['16978868.jpg', 'center', '#28211e'], // 32
     ['22125894.jpg', 'bottom', '#272D69'], // 33
-    ['77421788.jpg', 'center', '#4E6D44'], // 34
-    ['91643340.jpg', 'bottom', '#197B30'], // 35
-    ['88093858.jpg', 'bottom', '#485620'], // 36
-    ['00939591.jpg', 'center', '#35455B'], // 37
+    ['77421788.jpg', 'center', '#7b7a7a'], // 34
+    ['91643340.jpg', 'bottom', '#54702e'], // 35
+    ['88093858.jpg', 'bottom', '#d4e19d'], // 36
+    ['00939591.jpg', 'center', '#262d41'], // 37
     ['13838368.jpg', 'center', '#6C5640'], // 38
     ['14269512.jpg', 'center', '#4F63D5'], // 39
     ['37882132.jpg', 'bottom', '#223836'], // 40
@@ -88,7 +88,7 @@ _wallpaperdb_images = [
     ['71516908.jpg', 'center', '#483f44'], // 58
     ['73822546.jpg', 'bottom', '#382952'], // 59
     ['80768085.jpg', 'bottom', '#323e58'], // 60
-    ['93568387.jpg', 'bottom', '#354a5a'], // 61
+    ['93568387.jpg', 'bottom', '#2a353f'], // 61
     ['97469752.jpg', 'center', '#ba4234'], // 62
     ['02530621.jpg', 'center', '#313131'], // 63
     ['02534697.jpg', 'top', '#08072c'], // 64
@@ -112,10 +112,10 @@ _wallpaperdb_images = [
     ['79989977.jpg', 'top', '#09182d'], // 82
     ['82956328.jpg', 'bottom', '#354b72'], // 83
     ['83984226.jpg', 'top', '#721f3f'], // 84
-    ['86588736.jpg', 'center', '#5a5a5a'], // 85
-    ['94052111.jpg', 'center', '#484e4e'], // 86
+    ['86588736.jpg', 'center', '#cccccc'], // 85
+    ['94052111.jpg', 'center', '#555756'], // 86
     ['94936130.jpg', 'center', '#000000'], // 87
-    ['97039416.jpg', 'bottom', '#2f2526'], // 88
+    ['97039416.jpg', 'bottom', '#cacbcd'], // 88
     ['07949312.jpg', 'bottom', '#4b6270'], // 89
     ['08760783.jpg', 'bottom', '#096e6a'], // 90
     ['33459034.jpg', 'center', '#2c3552'], // 91
@@ -139,39 +139,54 @@ _wallpaperdb_images = [
     ['81749653.jpg', 'bottom', '#618591'], // 109
     ['98072701.jpg', 'center', '#705e50'] // 110
 ];
-_wallpaperdb_index = Math.floor(Math.random() * (_wallpaperdb_images.length + 1));
-// _wallpaperdb_index = 30 // TEST
 
-// noinspection ES6ConvertVarToLetConst
 /**
  * Se obtiene un elemento al azar
  * @type {{image: string, position: *, color: *, index: number | *}}
  */
-var wallpaper_db = {
-    "image": 'https://github.ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[_wallpaperdb_index][0],
-    "position": _wallpaperdb_images[_wallpaperdb_index][1],
-    "color": _wallpaperdb_images[_wallpaperdb_index][2],
-    "index": _wallpaperdb_index
+let wallpaper_db = {
+    'image': '',
+    'position': '',
+    'color': '',
+    'index': -1
 };
 
 /**
- * Genera blur en una imagen
- * @function
- * @param {string} idelem - Identificador del objeto a hacer blur
- * @param {number} blurprobability - Límites probabilidad de blur
- * @param {array} blurlimits - Límites probabilidad de blur
+ * Establece la imagen.
+ *
+ * @param {number=} $id - ID, si es nulo o 0, define uno aleatorio
  */
-function wallpaper_db_random_blur(idelem, blurprobability, blurlimits) {
-    if (Math.random() <= blurprobability / 100) {
+function wallpaper_db_set_image($id) {
+    if ($id === undefined || $id < 0 || $id >= _wallpaperdb_images.length) {
+        $id = Math.floor(Math.random() * (_wallpaperdb_images.length + 1));
+    }
+    wallpaper_db.image = 'img/' + _wallpaperdb_images[$id][0];
+    wallpaper_db.position = _wallpaperdb_images[$id][1];
+    wallpaper_db.color = _wallpaperdb_images[$id][2];
+    wallpaper_db.index = $id;
+}
+
+// Establece un fondo aleatorio
+wallpaper_db_set_image(0);
+
+/**
+ * Genera blur en una imagen.
+ *
+ * @param {string} $idelem - Identificador del objeto a hacer blur
+ * @param {number} $blurprobability - Límites probabilidad de blur
+ * @param {array} $blur_limits - Límites probabilidad de blur
+ */
+function wallpaper_db_random_blur($idelem, $blurprobability, $blur_limits) {
+    if (Math.random() <= $blurprobability / 100) {
         for (let i = 0; i < 100; i++) {
             // noinspection JSCheckFunctionSignatures
             let blur = parseInt(Math.random() * 100);
-            if (blur >= blurlimits[0] && blur <= blurlimits[1]) {
-                if (idelem[0] === '#') {
-                    idelem = idelem.substring(1)
+            if (blur >= $blur_limits[0] && blur <= $blur_limits[1]) {
+                if ($idelem[0] === '#') {
+                    $idelem = $idelem.substring(1)
                 }
-                document.getElementById(idelem).style.filter = 'blur(' + blur + 'px)';
-                document.getElementById(idelem).style.transform = 'scale(1.05)';
+                document.getElementById($idelem).style.filter = 'blur(' + blur + 'px)';
+                document.getElementById($idelem).style.transform = 'scale(1.05)';
             }
         }
     }

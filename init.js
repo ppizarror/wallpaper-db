@@ -47,14 +47,14 @@ $(function ($) {
     back_img.onload = function () {
         $bgheader.css({
             'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
-            'background-attachment': 'fixed',
+            'background-attachment': 'fixed'
         });
         $bgheader.css('-webkit-background-size', 'cover');
         $bgheader.css('-moz-background-size', 'cover');
         $bgheader.css('-o-background-size', 'cover');
         $bgheader.css('background-size', 'cover');
         $bgheader.css('width', $(window).width());
-        wallpaper_db_random_blur('#background-page-header', 50, [3, 10]);
+        wallpaper_db_random_blur('#background-page-header', 25, [3, 10]);
         setTimeout(function () {
             $('#background-page-header-colored').fadeOut('slow');
         }, 500);
