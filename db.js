@@ -161,7 +161,6 @@ _wallpaperdb_images = [
     ['76018829.jpg', 'center', '#221e1b'], // 131
     ['83445668.jpg', 'center', '#2a2826'], // 132
     ['28076516.jpg', 'center', '#e0e0e0'], // 133
-
     ['16309882.gif', 'center', '#131d25'], // 134
     ['24952843.jpg', 'center', '#040404'], // 135
     ['25834954.gif', 'center', '#0c2959'], // 136
@@ -173,6 +172,24 @@ _wallpaperdb_images = [
     ['93487592.jpg', 'center', '#37283e'], // 142
     ['96494556.jpg', 'center', '#4f312a'], // 143
     ['16309881.gif', 'center', '#6972b7'], // 144
+    ['03299959.jpg', 'center', '#27213d'], // 145
+    ['16297623.jpg', 'center', '#d6b796'], // 146
+    ['16301851.jpg', 'center', '#282a2a'], // 147
+    ['16304167.jpg', 'bottom', '#1e1e1e'], // 148
+    ['16304323.jpg', 'center', '#d8e4dc'], // 149
+    ['16306154.jpg', 'center', '#2e2827'], // 150
+    ['16714762.jpg', 'center', '#1c0b1d'], // 151
+    ['16806855.jpg', 'center', '#70567f'], // 152
+    ['52120562.jpg', 'center', '#250d24'], // 153
+    ['58520463.jpg', 'center', '#211e1d'], // 154
+    ['60374209.jpg', 'center', '#7e4c53'], // 155
+    ['60480110.jpg', 'center', '#0f3977'], // 156
+    ['16310424.jpg', 'center', '#668bb0'], // 157
+    ['63228189.jpg', 'center', '#c6b9ad'], // 158
+    ['69353620.jpg', 'center', '#3b3d35'], // 159
+    ['81595644.jpg', 'center', '#3b3021'], // 160
+    ['90606624.jpg', 'center', '#3d316d'], // 161
+    ['95223720.jpg', 'center', '#1a1828'], // 162
 ];
 
 /**
@@ -202,7 +219,7 @@ function wallpaper_db_set_image($id) {
 }
 
 // Establece un fondo aleatorio
-wallpaper_db_set_image(143);
+wallpaper_db_set_image();
 
 /**
  * Genera blur en una imagen.
