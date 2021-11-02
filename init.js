@@ -45,19 +45,21 @@ $(function ($) {
      */
     let back_img = new Image();
     back_img.onload = function () {
-        $bgheader.css({
-            'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
-            'background-attachment': 'fixed'
-        });
-        $bgheader.css('-webkit-background-size', 'cover');
-        $bgheader.css('-moz-background-size', 'cover');
-        $bgheader.css('-o-background-size', 'cover');
-        $bgheader.css('background-size', 'cover');
-        $bgheader.css('width', $(window).width());
-        wallpaper_db_random_blur('#background-page-header', 25, [3, 10]);
         setTimeout(function () {
-            $('#background-page-header-colored').fadeOut('slow');
-        }, 500);
+            $bgheader.css({
+                'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
+                'background-attachment': 'fixed'
+            });
+            $bgheader.css('-webkit-background-size', 'cover');
+            $bgheader.css('-moz-background-size', 'cover');
+            $bgheader.css('-o-background-size', 'cover');
+            $bgheader.css('background-size', 'cover');
+            $bgheader.css('width', $(window).width());
+            wallpaper_db_random_blur('#background-page-header', 25, [3, 10]);
+            setTimeout(function () {
+                $('#background-page-header-colored').fadeOut('slow');
+            }, 500);
+        }, 200);
     };
     back_img.src = wallpaper_db.image;
 

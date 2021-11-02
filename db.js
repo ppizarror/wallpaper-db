@@ -151,6 +151,16 @@ _wallpaperdb_images = [
     ['88649564.jpg', 'center', '#b4bbb8'], // 121
     ['14815894.jpg', 'center', '#6a7482'], // 122
     ['28076516.jpg', 'center', '#171006'], // 123
+    ['03056451.jpg', 'center', '#090e1d'], // 124
+    ['03935937.jpg', 'bottom', '#8b697e'], // 125
+    ['29852903.jpg', 'center', '#131313'], // 126
+    ['39819016.jpg', 'bottom', '#302c1d'], // 127
+    ['61079095.jpg', 'center', '#565776'], // 128
+    ['62656344.png', 'center', '#d06dd2'], // 129
+    ['63814927.jpg', 'center', '#45596d'], // 130
+    ['76018829.jpg', 'center', '#221e1b'], // 131
+    ['83445668.jpg', 'center', '#2a2826'], // 132
+    ['28076516.jpg', 'center', '#e0e0e0'], // 133
 ];
 
 /**
@@ -180,7 +190,7 @@ function wallpaper_db_set_image($id) {
 }
 
 // Establece un fondo aleatorio
-wallpaper_db_set_image(106);
+wallpaper_db_set_image();
 
 /**
  * Genera blur en una imagen.
