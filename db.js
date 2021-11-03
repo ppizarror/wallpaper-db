@@ -212,7 +212,7 @@ function wallpaper_db_set_image($id) {
     if ($id === undefined || $id < 0 || $id >= _wallpaperdb_images.length) {
         $id = Math.floor(Math.random() * (_wallpaperdb_images.length + 1));
     }
-    wallpaper_db.image = 'img/' + _wallpaperdb_images[$id][0];
+    wallpaper_db.image = 'https://github.ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[$id][0];
     wallpaper_db.position = _wallpaperdb_images[$id][1];
     wallpaper_db.color = _wallpaperdb_images[$id][2];
     wallpaper_db.index = $id;
