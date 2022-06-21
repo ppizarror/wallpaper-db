@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2021 Pablo Pizarro R.
+ Copyright 2017 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -210,7 +210,7 @@ let wallpaper_db = {
  */
 function wallpaper_db_set_image($id) {
     if ($id === undefined || $id < 0 || $id >= _wallpaperdb_images.length) {
-        $id = Math.floor(Math.random() * (_wallpaperdb_images.length + 1));
+        $id = Math.floor(Math.random() * _wallpaperdb_images.length);
     }
     wallpaper_db.image = 'https://github.ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[$id][0];
     wallpaper_db.position = _wallpaperdb_images[$id][1];

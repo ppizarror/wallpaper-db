@@ -1,7 +1,7 @@
 /**
  The MIT License (MIT)
 
- Copyright 2017-2021 Pablo Pizarro R.
+ Copyright 2017 Pablo Pizarro R.
 
  Permission is hereby granted, free of charge, to any person obtaining a
  copy of this software and associated documentation files (the "Software"),
@@ -21,52 +21,42 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+let $colored_bg = $('#background-page-header-colored');
+$colored_bg.css('background-color', wallpaper_db.color);
+
 /**
  * Funciones al cargar la página web
  */
 $(function ($) {
 
-    /**
-     * Fondos
-     */
-    let $bgcolored = $('#background-page-header-colored');
-    let $bgheader = $('#background-page-header');
-
-    /**
-     * Se establece un fondo aleatorio
-     */
-    $bgcolored.css('background-color', wallpaper_db.color);
-    $bgcolored.fadeIn(200);
-    console.log('Estableciendo el fondo de pantalla ' + wallpaper_db.index);
-
-    /**
-     * Se carga la imagen
-     * @type {HTMLImageElement}
-     */
-    let back_img = new Image();
-    back_img.onload = function () {
-        setTimeout(function () {
-            $bgheader.css({
-                'background': wallpaper_db.color + ' url(' + wallpaper_db.image + ') ' + wallpaper_db.position + ' no-repeat fixed',
-                'background-attachment': 'fixed'
-            });
-            $bgheader.css('-webkit-background-size', 'cover');
-            $bgheader.css('-moz-background-size', 'cover');
-            $bgheader.css('-o-background-size', 'cover');
-            $bgheader.css('background-size', 'cover');
-            $bgheader.css('width', $(window).width());
-            wallpaper_db_random_blur('#background-page-header', 25, [3, 10]);
-            setTimeout(function () {
-                $('#background-page-header-colored').fadeOut('slow');
-            }, 500);
-        }, 200);
+    let addStyle = function () {
+        const $style = document.createElement('style');
+        document.head.append($style);
+        return ($styleString) => $style.textContent += $styleString;
     };
-    back_img.src = wallpaper_db.image;
 
-    /**
-     * Se añade evento resize del fondo
-     */
-    $(window).on('resize.bgPageHeader', function () {
-        $('#background-page-header').css('width', $(window).width());
-    });
+    console.log('Estableciendo el fondo de pantalla ' + wallpaper_db.index);
+    let $header_bg = $('#background-page-header').fadeOut(0);
+    let $back_img = new Image();
+    $back_img.onload = function () {
+        addStyle(`
+            #background-page-header {
+                background: ${wallpaper_db.color} url('${wallpaper_db.image}') ${wallpaper_db.position} no-repeat;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        `);
+        $colored_bg.fadeOut();
+    };
+    $back_img.src = wallpaper_db.image;
+    let $resizeBg = function () {
+        let $h = $(window).innerHeight();
+        $header_bg.css('height', $h);
+    };
+    // noinspection JSCheckFunctionSignatures
+    $(window).on('resize.background', $resizeBg);
+    setInterval($resizeBg, 5000);
+    $resizeBg();
 });
