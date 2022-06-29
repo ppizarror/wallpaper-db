@@ -28,12 +28,11 @@ $colored_bg.css('background-color', wallpaper_db.color);
  * Funciones al cargar la página web
  */
 $(function ($) {
-
-    let addStyle = function () {
+    let addStyle = (() => {
         const $style = document.createElement('style');
         document.head.append($style);
         return ($styleString) => $style.textContent += $styleString;
-    };
+    })();
 
     console.log('Estableciendo el fondo de pantalla ' + wallpaper_db.index);
     let $header_bg = $('#background-page-header').fadeOut(0);
@@ -49,6 +48,7 @@ $(function ($) {
             }
         `);
         $colored_bg.fadeOut();
+        console.warn(wallpaper_db.image);
     };
     $back_img.src = wallpaper_db.image;
     let $resizeBg = function () {
