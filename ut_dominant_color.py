@@ -20,7 +20,7 @@ def dominant():
 	dominant_color = color_thief.get_color(quality=1)
 	dom = '#%02x%02x%02x' % dominant_color
 	pyperclip.copy(dom)
-	directory.set(f'Color final {dom}')
+	directory.set(dom)
 
 btn = tk.Button(f, text='Process', command=dominant)
 btn.pack()

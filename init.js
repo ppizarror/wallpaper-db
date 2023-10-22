@@ -21,6 +21,7 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+// wallpaper_db_set_image(0);
 let $colored_bg = $('#background-page-header-colored');
 $colored_bg.css('background-color', wallpaper_db.color);
 
@@ -34,7 +35,7 @@ $(function ($) {
         return ($styleString) => $style.textContent += $styleString;
     })();
 
-    console.log('Estableciendo el fondo de pantalla ' + wallpaper_db.index);
+    console.log(`Estableciendo el fondo de pantalla ${wallpaper_db.index}`);
     let $header_bg = $('#background-page-header').fadeOut(0);
     let $back_img = new Image();
     $back_img.onload = function () {

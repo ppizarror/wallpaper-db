@@ -29,7 +29,7 @@
 _wallpaperdb_images = [
     ['09305524.jpg', 'center', '#333333'], // 0
     ['67535412.jpg', 'bottom', '#99afd0'], // 1
-    ['95686782.jpg', 'bottom', '#3e224f'], // 2
+    ['95686782.jpg', 'bottom', '#351e44'], // 2
     ['93314696.jpg', 'center', '#0f0e0f'], // 3
     ['12939392.jpg', 'center', '#b7a689'], // 4
     ['19392139.jpg', 'center', '#1a150f'], // 5
@@ -72,12 +72,12 @@ _wallpaperdb_images = [
     ['39850828.jpg', 'center', '#51698b'], // 42
     ['50989454.jpg', 'top', '#886647'], // 43
     ['57231197.jpg', 'bottom', '#282635'], // 44
-    ['91853601.jpg', 'bottom', '#2b0771'], // 45
+    ['91853601.jpg', 'bottom', '#25065b'], // 45
     ['03081592.jpg', 'bottom', '#8a9292'], // 46
     ['15877230.jpg', 'center', '#070b16'], // 47
     ['25528122.jpg', 'bottom', '#0c0b0b'], // 48
     ['29656367.jpg', 'center', '#3c6bc8'], // 49
-    ['38184232.jpg', 'bottom', '#5fabfb'], // 50
+    ['38184232.jpg', 'bottom', '#4883bb'], // 50
     ['44532443.jpg', 'center', '#4c4c4c'], // 51
     ['45325963.jpg', 'bottom', '#2b4f5e'], // 52
     ['60192994.jpg', 'bottom', '#402e4b'], // 53
@@ -98,7 +98,7 @@ _wallpaperdb_images = [
     ['09553028.jpg', 'center', '#44535b'], // 68
     ['16845918.jpg', 'center', '#520031'], // 69
     ['18027342.jpg', 'center', '#334272'], // 70
-    ['26185627.jpg', 'bottom', '#b5a8fb'], // 71
+    ['26185627.jpg', 'bottom', '#766da6'], // 71
     ['30915665.jpg', 'bottom', '#47498e'], // 72
     ['31865394.jpg', 'bottom', '#df7596'], // 73
     ['32064937.jpg', 'top', '#4a4c46'], // 74
@@ -173,7 +173,7 @@ _wallpaperdb_images = [
     ['96494556.jpg', 'center', '#4f312a'], // 143
     ['16309881.gif', 'center', '#6972b7'], // 144
     ['03299959.jpg', 'center', '#27213d'], // 145
-    ['16297623.jpg', 'center', '#d6b796'], // 146
+    ['49118787.jpg', 'center', '#ac9878'], // 146
     ['16301851.jpg', 'center', '#282a2a'], // 147
     ['16304167.jpg', 'bottom', '#1e1e1e'], // 148
     ['16304323.jpg', 'center', '#d8e4dc'], // 149
@@ -190,17 +190,29 @@ _wallpaperdb_images = [
     ['81595644.jpg', 'center', '#3b3021'], // 160
     ['90606624.jpg', 'center', '#3d316d'], // 161
     ['95223720.jpg', 'center', '#1a1828'], // 162
+    ['00139801.jpg', 'center', '#4b4f41'], // 163
+    ['66169915.jpg', 'bottom', '#141621'], // 164
+    ['24543748.jpeg', 'bottom', '#2b4b53'], // 165
+    ['15759723.jpg', 'bottom', '#222222'], // 166
+    ['14732961.jpg', 'center', '#bfb9b6'], // 167
+    ['40473882.jpg', 'center', '#142e4a'], // 168
+    ['12262224.jpg', 'bottom', '#8fa6b6'], // 169
+    ['75100330.jpg', 'bottom', '#2b2d3b'], // 170
+    ['66554960.jpg', 'center', '#cfcdbb'], // 171
+    ['07866639.jpg', 'center', '#5c6a85'], // 172
+    ['59942285.jpg', 'center', '#1e211c'], // 173
+    ['01972284.jpg', 'center', '#644e5c'], // 174
 ];
 
 /**
  * Se obtiene un elemento al azar
- * @type {{image: string, position: *, color: *, index: number | *}}
+ * @type {{image: string, position: string, color: string, index: number}}
  */
 let wallpaper_db = {
-    'image': '',
-    'position': '',
     'color': '',
-    'index': -1
+    'image': '',
+    'index': -1,
+    'position': '',
 };
 
 /**
@@ -234,9 +246,7 @@ function wallpaper_db_random_blur($idelem, $blurprobability, $blur_limits) {
             // noinspection JSCheckFunctionSignatures
             let blur = parseInt(Math.random() * 100);
             if (blur >= $blur_limits[0] && blur <= $blur_limits[1]) {
-                if ($idelem[0] === '#') {
-                    $idelem = $idelem.substring(1)
-                }
+                if ($idelem[0] === '#') $idelem = $idelem.substring(1)
                 document.getElementById($idelem).style.filter = 'blur(' + blur + 'px)';
                 document.getElementById($idelem).style.transform = 'scale(1.05)';
             }
