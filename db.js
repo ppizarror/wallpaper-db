@@ -215,23 +215,41 @@ let wallpaper_db = {
     'position': '',
 };
 
+// noinspection JSUnusedGlobalSymbols
 /**
- * Establece la imagen.
+ * Query a given color to match target brightness.
  *
- * @param {number=} $id - ID, si es nulo o 0, define uno aleatorio
+ * @param {(function(string): *|{
+ *      brighten: (function(number): *),
+ *      darken: (function(number): *),
+ *      getBrightness: (function(): number),
+ * })} $tinycolor - Tinycolor library reference
+ * @param {number} $target_brightness - Target reference
+ * @param {string|null=} $target_color - Which color to consider
+ * @param {boolean=} $log - If true, logs new brightness
+ * @returns {*} - Color
  */
-function wallpaper_db_set_image($id) {
-    if ($id === undefined || $id < 0 || $id >= _wallpaperdb_images.length) {
-        $id = Math.floor(Math.random() * _wallpaperdb_images.length);
+function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color, $log) {
+    if (!$target_color) $target_color = wallpaper_db.color;
+    let $wcolor = $tinycolor($target_color);
+    let $wbright = $wcolor.getBrightness();
+    let $less_than_target = $wbright < $target_brightness;
+    let $i;
+    for ($i = 1; $i <= 100; $i += 1) {
+        let $ci = $tinycolor($target_color);
+        if ($less_than_target) {
+            $ci.brighten($i);
+        } else {
+            $ci.darken($i);
+        }
+        if (($less_than_target && $ci.getBrightness() >= $target_brightness) || (!$less_than_target && $ci.getBrightness() <= $target_brightness)) {
+            $wcolor = $ci;
+            break;
+        }
     }
-    wallpaper_db.image = 'https://github.ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[$id][0];
-    wallpaper_db.position = _wallpaperdb_images[$id][1];
-    wallpaper_db.color = _wallpaperdb_images[$id][2];
-    wallpaper_db.index = $id;
+    if ($log) console.log('Updating color from brightness ' + $wbright.toString() + ' to ' + $wcolor.getBrightness().toString() + ' in ' + $i.toString() + ' iterations');
+    return $wcolor;
 }
-
-// Establece un fondo aleatorio
-wallpaper_db_set_image();
 
 /**
  * Genera blur en una imagen.
@@ -253,3 +271,21 @@ function wallpaper_db_random_blur($idelem, $blurprobability, $blur_limits) {
         }
     }
 }
+
+/**
+ * Establece la imagen.
+ *
+ * @param {number=} $id - ID, si es nulo o 0, define uno aleatorio
+ */
+function wallpaper_db_set_image($id) {
+    if ($id === undefined || $id < 0 || $id >= _wallpaperdb_images.length) {
+        $id = Math.floor(Math.random() * _wallpaperdb_images.length);
+    }
+    wallpaper_db.image = 'https://github.ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[$id][0];
+    wallpaper_db.position = _wallpaperdb_images[$id][1];
+    wallpaper_db.color = _wallpaperdb_images[$id][2];
+    wallpaper_db.index = $id;
+}
+
+// Establece un fondo aleatorio
+wallpaper_db_set_image();
