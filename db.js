@@ -231,6 +231,7 @@ let wallpaper_db = {
  */
 function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color, $log) {
     if (!$target_color) $target_color = wallpaper_db.color;
+    if ($log === undefined) $log = true;
     let $wcolor = $tinycolor($target_color);
     let $wbright = $wcolor.getBrightness();
     let $less_than_target = $wbright < $target_brightness;
