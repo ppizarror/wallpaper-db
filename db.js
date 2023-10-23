@@ -237,12 +237,12 @@ function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color,
     let $wbright = $wcolor.getBrightness();
     let $less_than_target = $wbright < $target_brightness;
     let $i;
-    for ($i = 1; $i <= 100; $i += 1) {
+    for ($i = 1; $i <= 200; $i += 1) {
         let $ci = $tinycolor($target_color);
         if ($less_than_target) {
-            $ci.brighten($i);
+            $ci.brighten(0.5 * $i);
         } else {
-            $ci.darken($i);
+            $ci.darken(0.5 * $i);
         }
         if (($less_than_target && $ci.getBrightness() >= $target_brightness) || (!$less_than_target && $ci.getBrightness() <= $target_brightness)) {
             $wcolor = $ci;
