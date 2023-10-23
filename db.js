@@ -225,12 +225,13 @@ let wallpaper_db = {
  *      getBrightness: (function(): number),
  * })} $tinycolor - Tinycolor library reference
  * @param {number} $target_brightness - Target reference
- * @param {string|null=} $target_color - Which color to consider
+ * @param {string|null|*=} $target_color - Which color to consider
  * @param {boolean=} $log - If true, logs new brightness
  * @returns {*} - Color
  */
 function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color, $log) {
     if (!$target_color) $target_color = wallpaper_db.color;
+    if ($target_color.hasOwnProperty('toHexString')) $target_color = $target_color.toHexString();
     if ($log === undefined) $log = true;
     let $wcolor = $tinycolor($target_color);
     let $wbright = $wcolor.getBrightness();
