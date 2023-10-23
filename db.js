@@ -229,7 +229,7 @@ let wallpaper_db = {
  * @param {boolean=} $log - If true, logs new brightness
  * @returns {*} - Color
  */
-function wallpaper_db_query_color2($tinycolor, $target_brightness, $target_color, $log) {
+function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color, $log) {
     if (!$target_color) $target_color = wallpaper_db.color;
     if ($target_color.hasOwnProperty('toHexString')) $target_color = $target_color.toHexString();
     // if ($log === undefined) $log = true;
