@@ -229,7 +229,7 @@ let wallpaper_db = {
  * @param {boolean=} $log - If true, logs new brightness
  * @returns {*} - Color
  */
-function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color, $log) {
+function wallpaper_db_query_color2($tinycolor, $target_brightness, $target_color, $log) {
     if (!$target_color) $target_color = wallpaper_db.color;
     if ($target_color.hasOwnProperty('toHexString')) $target_color = $target_color.toHexString();
     // if ($log === undefined) $log = true;
@@ -237,23 +237,29 @@ function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color,
     let $wbright = $wcolor.getBrightness();
     let $less_than_target = $wbright < $target_brightness;
     let $i;
-    let $factor = 0;
+    let $factor = 1;
     for ($i = 1; $i <= 200; $i += 1) {
         let $ci = $tinycolor($target_color);
-        let $dc = Math.abs($ci.getBrightness() - $target_brightness);
-        if ($dc > 25) {
-            $factor += 2;
-        } else if ($dc > 10) {
-            $factor += 1;
-        } else if ($dc > 5) {
-            $factor += 0.5;
-        } else {
-            $factor += 0.25;
-        }
         if ($less_than_target) {
             $ci.brighten($factor);
         } else {
             $ci.darken($factor);
+        }
+        let $dc = Math.abs($ci.getBrightness() - $target_brightness);
+        if ($dc > 50) {
+            $factor += 15;
+        } else if ($dc > 25) {
+            $factor += 10;
+        } else if ($dc > 10) {
+            $factor += 1;
+        } else if ($dc > 5) {
+            $factor += 0.5;
+        } else if ($dc > 1) {
+            $factor += 0.25;
+        } else if ($dc > 0.5) {
+            $factor += 0.125;
+        } else {
+            $factor += 0.1;
         }
         if (($less_than_target && $ci.getBrightness() >= $target_brightness) || (!$less_than_target && $ci.getBrightness() <= $target_brightness)) {
             $wcolor = $ci;
