@@ -232,18 +232,28 @@ let wallpaper_db = {
 function wallpaper_db_query_color($tinycolor, $target_brightness, $target_color, $log) {
     if (!$target_color) $target_color = wallpaper_db.color;
     if ($target_color.hasOwnProperty('toHexString')) $target_color = $target_color.toHexString();
-    if ($log === undefined) $log = true;
+    // if ($log === undefined) $log = true;
     let $wcolor = $tinycolor($target_color);
     let $wbright = $wcolor.getBrightness();
     let $less_than_target = $wbright < $target_brightness;
     let $i;
+    let $factor = 0;
     for ($i = 1; $i <= 200; $i += 1) {
         let $ci = $tinycolor($target_color);
-        let $factor = Math.abs($ci.getBrightness() - $target_brightness) > 10 ? 1 : 0.5;
-        if ($less_than_target) {
-            $ci.brighten($factor * $i);
+        let $dc = Math.abs($ci.getBrightness() - $target_brightness);
+        if ($dc > 25) {
+            $factor += 2;
+        } else if ($dc > 10) {
+            $factor += 1;
+        } else if ($dc > 5) {
+            $factor += 0.5;
         } else {
-            $ci.darken($factor * $i);
+            $factor += 0.25;
+        }
+        if ($less_than_target) {
+            $ci.brighten($factor);
+        } else {
+            $ci.darken($factor);
         }
         if (($less_than_target && $ci.getBrightness() >= $target_brightness) || (!$less_than_target && $ci.getBrightness() <= $target_brightness)) {
             $wcolor = $ci;
