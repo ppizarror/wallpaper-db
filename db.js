@@ -294,10 +294,10 @@ function wallpaper_db_random_blur($idelem, $blurprobability, $blur_limits) {
 /**
  * Establece la imagen.
  *
- * @param {number=} $id - ID, si es nulo o 0, define uno aleatorio
+ * @param {number|null=} $id - ID, si es nulo o 0, define uno aleatorio
  */
 function wallpaper_db_set_image($id) {
-    if ($id === undefined || $id < 0 || $id >= _wallpaperdb_images.length) {
+    if ($id === undefined || $id === null || $id < 0 || $id >= _wallpaperdb_images.length) {
         $id = Math.floor(Math.random() * _wallpaperdb_images.length);
     }
     wallpaper_db.image = 'https://github.ppizarror.com/wallpaper-db/img/' + _wallpaperdb_images[$id][0];
